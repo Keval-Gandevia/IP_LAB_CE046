@@ -1,17 +1,18 @@
-img = imread("ex_contrast.tif");
-equalize_img = equalize(img);
+img = imread('ex_contrast.tif');
 
-function equalize_img = equalize(img)
-    [m, n] = size(img);
-    pdf = [];
-    for i = 1 : 255
-        pdf(i) = sum(sum(img == i)) / (m * n);
-    end
-    
-    cdf = [];
-    cdf(1) = pdf(1);
-    for i = 2 : 255
-        cdf(i) = pdf(i) + cdf(i-1);
-    end
-    
-end
+subplot(2, 3, 1);
+imshow(img);
+title('Original Image');
+
+equalized_image = histogram_equalization(img);
+subplot(2, 3, 2);
+imshow(equalized_image, []);
+title('Equalized Image');
+
+% histeq function
+hist_img = histeq(img);
+subplot(2, 3, 3);
+imshow(hist_img, []);
+title('Using histeq function');
+
+
