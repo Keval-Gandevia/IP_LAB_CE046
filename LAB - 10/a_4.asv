@@ -1,0 +1,7 @@
+clear all;
+
+img = imread('Test_Image.jpg');
+
+filter = median(img);
+
+sub

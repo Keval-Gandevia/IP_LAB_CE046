@@ -1,0 +1,2 @@
+img = imread('Test_Image.jpg');
+img = do
