@@ -1,0 +1,13 @@
+img = imread('building.tif');
+
+gx = [1 2 1; 0 0 0; -1 -2 -1];
+gy = [-1 0 1; -2 0 2; -1 0 1];
+
+xImg = imfilter(img, gx);
+yImg = imfilter(img, gy);
+
+figure;
+imshow(xImg);
+
+figure;
+imshow(yImg);
